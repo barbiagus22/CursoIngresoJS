@@ -7,12 +7,12 @@ function mostrar()
 	var largo;
 	var perimetro;
 
-	ancho=prompt("el ancho es","5");
-	largo=prompt("el largo es","5");
+	ancho=prompt("el ancho es");
+	largo=prompt("el largo es");
 
-	perimetro=(ancho *2)+(largo*2);
+	perimetro=(ancho*2)+(largo*2);
 
-	alert("El perimetro es: ");
+	alert("El perimetro es: "+ perimetro);
 
 
 //2
