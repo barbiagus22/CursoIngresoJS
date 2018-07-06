@@ -22,12 +22,27 @@ function sumar()
 	alert ("la suma es: "+ resultado);
 
 
-
 }
 
 function restar()
 {
 	
+	var numero1;
+	var numero2;
+
+	numero1=document.getElementById('numeroUno').value;
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 function multiplicar()
