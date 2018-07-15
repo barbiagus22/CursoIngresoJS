@@ -27,7 +27,6 @@ function CalcularPrecio ()
   	preciototal= cantidaddelamparas * 35;
  	
  //A
-
  			if (cantidaddelamparas>=6 ) {descuento= preciototal*0.50;}
  			else
  	{
@@ -56,17 +55,15 @@ function CalcularPrecio ()
  	
 	preciodescuento = preciototal - descuento;
  	document.getElementById('precioDescuento').value=preciodescuento;
-
 //E
-
- 	if (preciodescuento>120) 
+ 	if (preciodescuento > 120 )
  	{	
  		document.getElementById('precioDescuento').value=preciodescuento;
- 		ingresosbrutos= preciodescuento*0.10;
- 		preciodescuento=preciodescuento+ingresosbrutos;
- 		alert(" Usted pago  " + ingresosbrutos  + " pesos de IIBB" );	
+ 		ingresosbrutos = preciodescuento * 0.10 ;
+ 		preciodescuento = preciodescuento + ingresosbrutos;
+ 		alert ( "Usted pago  " + ingresosbrutos + " pesos de IIBB");
  	}
- 	else {document.getElementById('precioDescuento').value=preciodescuento;}
+ 	else {preciodescuento;}
 
 
 
