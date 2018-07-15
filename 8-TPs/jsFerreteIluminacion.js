@@ -12,6 +12,71 @@ function CalcularPrecio ()
 {
  	// A.
 
+ 	var	cantidaddelamparas;
+ 	var	marca;
+ 	var	preciototal;
+ 	var	descuento;
+ 	var preciodescuento;
+ 	var	ingresosbrutos;
+
+
+ 	cantidaddelamparas=document.getElementById('Cantidad').value;
+ 	cantidaddelamparas=parseInt(cantidaddelamparas);
+ 	marca=document.getElementById('Marca').value;
+ 	//alert( "cantidaDelamparas: " + cantidaDelamparas + "marca: " + marca);
+  	preciototal= cantidaddelamparas * 35;
+ 	
+ //A
+
+ 			if (cantidaddelamparas>=6 ) {descuento= preciototal*0.50;}
+ 			else
+ 	{
+//B
+ 			if (cantidaddelamparas==5) 
+ 		{
+ 			if (marca=='ArgentinaLuz') {descuento=preciototal*0.40;	}
+ 			else {descuento=preciototal*0.30;}
+ 		}
+//C
+ 			else if (cantidaddelamparas==4)
+ 		{
+ 			//o && (marca=='ArgentinaLuz' || marca== 'FelipeLamparas') ) 
+ 			if (marca=='ArgentinaLuz' || marca== 'FelipeLamparas') {descuento=preciototal*0.25;}
+ 			else{descuento=preciototal*0.20;}		
+		}
+//D preguntar la union de este if!!...
+		
+ 			else if (cantidaddelamparas==3)
+ 		{	
+ 			if (marca=='ArgentinaLuz') {descuento=preciototal*0.15;}
+ 			else if (marca=='FelipeLamparas') {descuento=preciototal*0.10;}
+  			else{descuento=preciototal*5/100;}		
+ 		}
+ 	}
+ 	
+	preciodescuento = preciototal - descuento;
+ 	document.getElementById('precioDescuento').value=preciodescuento;
+
+//E
+
+ 	if (preciodescuento>120) 
+ 	{	
+ 		document.getElementById('precioDescuento').value=preciodescuento;
+ 		ingresosbrutos= preciodescuento*0.10;
+ 		preciodescuento=preciodescuento+ingresosbrutos;
+ 		alert(" Usted pago  " + ingresosbrutos  + " pesos de IIBB" );	
+ 	}
+ 	else {document.getElementById('precioDescuento').value=preciodescuento;}
+
+
+
+}
+
+	
+
+
+
+
 
  	/*var cantidadlamparas;
 	var preciocondescuento;
@@ -22,64 +87,56 @@ function CalcularPrecio ()
 
 	if (cantidadlamparas>=6) {
 	
-	preciocondescuento= (precio*cantidadlamparas)*50/100;
-	document.getElementById('precioDescuento').value=preciocondescuento;
+ preciocondescuento= (precio*cantidadlamparas)*50/100;
+	document.getElementById('precioDescuento').value preciocondescuento;
 	
 }
 */
 
- 	var cantidadlamparas;
+ 	/*var cantidadlamparas;
  	var preciocondescuento;
+ 	var precio;
  	var	marca;
- 	var totalbruto;
- 	var descuento;
 
 
- 	
+ 	precio=35;
  	cantidadlamparas=document.getElementById('Cantidad').value;
  	marca=document.getElementById('Marca').value;
 
- 	totalbruto=cantidadlamparas*35;
- 	preciocondescuento= totalbruto-descuento;
 
- 	document.getElementById('Precio con descuento').value=preciocondescuento;
+ if(cantidadlamparas>=6) {
 
- 	//pruebo si flciona...
- 	 	
- if (cantidadlamparas>=6) {
 
- 		descuento=totalbruto*0.5;
-
- 		}
+ 		preciocondescuento=(precio * cantidadlamparas) * 0.50;
+ 		document.getElementById('precioDescuento').value=preciocondescuento;
+ 	}
 //B.
 
- else if (cantidadlamparas==5 ) {
-
- 		if (marca=='ArgentinaLuz') {
-
- 		descuento=totalbruto*0.40;
- 		
-  		}
+ else if (cantidadlamparas==5 && marca=='ArgentinaLuz') {
+ 		preciocondescuento=(precio * cantidadlamparas)* 0.40;
+ 		document.getElementById('precioDescuento').value=preciocondescuento;
+  	}
  		else { 
 
- 			descuento=totalbruto*0.30;
- 			}
+ 			preciocondescuento= (precio*cantidadlamparas)*0.30;
+ 			document.getElementById('precioDescuento').value=preciocondescuento;
  	}
  	
 
-//C.                                                                                                                                                                  
+//C.
 
- /*if (cantidadlamparas==4 && (marca=='ArgentinaLuz'|| marca=='FelipeLamparas')) {
+ /*if (cantidadlamparas==4 && (marca=='ArgentinaLuz'||'FelipeLamparas')) {
 
-		preciocondescuento= precio-((preciocondescuento*cantidadlamparas)*0.25);
+		preciocondescuento=(preciocondescuento*cantidadlamparas)*0.25;
 		document.getElementById('precioDescuento').value=preciocondescuento;
 	}
 		else {
 
-		preciocondescuento=precio-((preciocondescuento*cantidadlamparas)*0.20);
+		preciocondescuento=(preciocondescuento*cantidadlamparas)*0.20;
 		document.getElementById('precioDescuento').value=preciocondescuento;
 
 	}	
+
 */
 
 
@@ -90,7 +147,6 @@ function CalcularPrecio ()
 
 
 
-}
 
 
 
