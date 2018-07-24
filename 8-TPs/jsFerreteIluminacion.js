@@ -24,50 +24,219 @@ function CalcularPrecio ()
  	cantidaddelamparas=parseInt(cantidaddelamparas);
  	marca=document.getElementById('Marca').value;
  	//alert( "cantidaDelamparas: " + cantidaDelamparas + "marca: " + marca);
-  	preciototal= cantidaddelamparas * 35;
+ 	preciototal= cantidaddelamparas * 35;
  	
- //A
- 			if (cantidaddelamparas>=6 ) {descuento= preciototal*0.50;}
- 			else
- 	{
-//B
- 			if (cantidaddelamparas==5) 
- 		{
- 			if (marca=='ArgentinaLuz') {descuento=preciototal*0.40;	}
- 			else {descuento=preciototal*0.30;}
- 		}
-//C
- 			else if (cantidaddelamparas==4)
- 		{
- 			//o && (marca=='ArgentinaLuz' || marca== 'FelipeLamparas') ) 
- 			if (marca=='ArgentinaLuz' || marca== 'FelipeLamparas') {descuento=preciototal*0.25;}
- 			else{descuento=preciototal*0.20;}		
-		}
-//D preguntar la union de este if!!...
-		
- 			else if (cantidaddelamparas==3)
- 		{	
- 			if (marca=='ArgentinaLuz') {descuento=preciototal*0.15;}
- 			else if (marca=='FelipeLamparas') {descuento=preciototal*0.10;}
-  			else{descuento=preciototal*5/100;}		
- 		}
- 	}
- 	
-	preciodescuento = preciototal - descuento;
+
+
+  	if (cantidaddelamparas>=6) {
+
+  		descuento=preciototal*0.50;
+  		
+  	}
+  	 else if (cantidaddelamparas==5 && marca== "ArgentinaLuz" ) {
+
+  	 	descuento=preciototal*0.40;
+  	 	
+  	 }
+  	 else if (cantidaddelamparas==5 && marca!= "ArgentinaLuz") {
+
+  	 	descuento=preciototal*0.30;
+  	 	
+  	 }
+  	 else if ( cantidaddelamparas==4 && (marca== "ArgentinaLuz"  || marca == "FelipeLamparas" ) ) {
+  	
+  	 	descuento=preciototal*0.25;
+  	 }
+   	 
+   	else if ( cantidaddelamparas==4 && (marca != "ArgentinaLuz"  || marca!="FelipeLamparas") )   {
+
+   	  	descuento=preciototal*0.20;
+   	 }
+
+   	else if (cantidaddelamparas==3) {
+
+   	 		if ( marca== "ArgentinaLuz") {
+
+   	 			descuento=preciototal*0.15
+   	 			
+  	 		}
+
+  	 		else if (marca=='FelipeLamparas' ) {
+
+  	 			descuento=preciototal*0.10;
+ 
+   	 		}
+
+  	 		else {
+
+  	 			descuento=preciototal*0.05;
+  	 		}
+   	}
+
+   	else if (cantidaddelamparas<3) {
+
+   		descuento=0;
+   		
+   	}
+   	
+   	preciodescuento = preciototal - descuento;
  	document.getElementById('precioDescuento').value=preciodescuento;
-//E
- 	if (preciodescuento > 120 )
- 	{	
+
+
+ 	if (preciodescuento > 120 ){
+ 		
  		document.getElementById('precioDescuento').value=preciodescuento;
  		ingresosbrutos = preciodescuento * 0.10 ;
  		preciodescuento = preciodescuento + ingresosbrutos;
  		alert ( "Usted pago  " + ingresosbrutos + " pesos de IIBB");
  	}
- 	else {preciodescuento;}
+
+ }
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	/*
+ //A
+ 			if (cantidaddelamparas>=6 ) {
+ 				descuento= preciototal
+ 				*0.50;
+ 			}
+ 			else if (cantidaddelamparas==5) && (marca=='ArgentinaLuz') {
+ 				descuento=preciototal
+ 				*0.40;	
+ 			
+ 			else {
+ 				descuento=preciototal
+ 				*0.30;
+ 			}
+//B
+ 			else if (cantidaddelamparas==4) && (marca=='ArgentinaLuz' || marca== 'FelipeLamparas') {
+ 			    descuento=
+ 	preciototal
+ 			    *0.25;
+ 			}
+		 	
+ 			else{
+ 				descuento=preciototal*0.20;
+ 			}
+ 			else if (cantidaddelamparas==3) &&(marca=='ArgentinaLuz') {
+ 				descuento=preciototal*0.15;
+ 			}
+ 			else if (marca=='FelipeLamparas') {
+ 				descuento=preciototal*0.10;
+ 			}
+ 	
+  			else{descuento=preciototal*5/100;
+  			}		
+ 			}*/
+ 		
+ 	
+	
+//E
+ 		/*if (preciodescuento > 120 )
+ 		{	
+ 		document.getElementById('precioDescuento').value=preciodescuento;
+ 		ingresosbrutos = preciodescuento * 0.10 ;
+ 		preciodescuento = preciodescuento + ingresosbrutos;
+ 		alert ( "Usted pago  " + ingresosbrutos + " pesos de IIBB");
+ 		}*/
+ 		
+
+
+
+
 
 	
 
