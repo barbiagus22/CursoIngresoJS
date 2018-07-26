@@ -28,7 +28,8 @@ function CalcularPrecio ()
   
   
 
-
+//// CASO DOS - SWICH -------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
   switch (cantidaddelamparas) {
 
     case 1:
@@ -115,9 +116,15 @@ if (preciodescuento > 120 ){
     alert ( "Usted pago  " + ingresosbrutos + " pesos de IIBB");
   }
 
+
  //PREGUNTAR SI SE PUEDE HACER SWITCH EN EL CASO DE IIBB O COMO SE HACE?
 
-  /*switch (preciodescuento){ 
+
+
+
+
+  /*
+  switch (preciodescuento){ 
 
     case 120:
      
@@ -131,12 +138,13 @@ if (preciodescuento > 120 ){
 
   document.getElementById('precioDescuento').value=preciodescuento;
 
-*/
+   
 
 
  	
 }
 
+*/
 
 
 
@@ -148,6 +156,7 @@ if (preciodescuento > 120 ){
 
 
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -155,9 +164,9 @@ if (preciodescuento > 120 ){
 
 
 
+/* CASO UNO IF ELSE // -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-/* CASO UNO IF ELSE //
   	if (cantidaddelamparas>=6) {
 
   		descuento=preciototal*0.50;
@@ -225,7 +234,7 @@ if (preciodescuento > 120 ){
 
 */
 
-
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
