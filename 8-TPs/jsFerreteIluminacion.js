@@ -24,10 +24,140 @@ function CalcularPrecio ()
  	cantidaddelamparas=parseInt(cantidaddelamparas);
  	marca=document.getElementById('Marca').value;
  	//alert( "cantidaDelamparas: " + cantidaDelamparas + "marca: " + marca);
- 	preciototal= cantidaddelamparas * 35;
+ 	preciototal=cantidaddelamparas*35;
+  
+  
+
+
+  switch (cantidaddelamparas) {
+
+    case 1:
+    case 2:
+    descuento=0;
+    break;
+    
+
+    case 3:
+      switch (marca) {
+
+        case 'ArgentinaLuz':
+          descuento=preciototal*0.15;
+        break;
+
+        case 'FelipeLamparas':
+          descuento=preciototal*0.10;
+        break;
+
+        default:
+          descuento=preciototal*0.05;
+         
+      }
+
+      break;
+
+    case 4:
+  
+      switch (marca) {
+
+        case 'ArgentinaLuz':
+        case 'FelipeLamparas':
+          descuento=preciototal*0.25;
+        break;
+
+        default:
+          descuento=preciototal*0.20;
+         ///PREGUNTAR SI EN DEFAULT VA BREAK POR Q SINO SE ME EJECUTA EL SIGUENTE. 
+     }
+
+     break;
+
+    case 5:
+
+      switch (marca) {
+
+        case 'ArgentinaLuz':
+        descuento=preciototal*0.40;
+        break;
+
+        default:
+        descuento=preciototal*0.30;
+        
+      } 
+
+      break;
+
+    case 6:
+
+       descuento=preciototal*0.50;
+      break;
+
+
+      default:
+
+        descuento=preciototal*0.50;
+
+
+  
+
+}
+  
+
+ preciodescuento = preciototal - descuento;
+ document.getElementById('precioDescuento').value=preciodescuento;
+
+
+
+if (preciodescuento > 120 ){
+    
+    document.getElementById('precioDescuento').value=preciodescuento;
+    ingresosbrutos = preciodescuento * 0.10 ;
+    preciodescuento = preciodescuento + ingresosbrutos;
+    alert ( "Usted pago  " + ingresosbrutos + " pesos de IIBB");
+  }
+
+ //PREGUNTAR SI SE PUEDE HACER SWITCH EN EL CASO DE IIBB O COMO SE HACE?
+
+  /*switch (preciodescuento){ 
+
+    case 120:
+     
+      ingresosbrutos = preciodescuento * 0.10 ;
+      preciodescuento = preciodescuento + ingresosbrutos;
+      alert ( "Usted pago  " + ingresosbrutos + " pesos de IIBB");
+
+    break;
+
+   }
+
+  document.getElementById('precioDescuento').value=preciodescuento;
+
+*/
+
+
  	
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CASO UNO IF ELSE //
   	if (cantidaddelamparas>=6) {
 
   		descuento=preciototal*0.50;
@@ -93,7 +223,7 @@ function CalcularPrecio ()
 
  }
 
-
+*/
 
 
 
