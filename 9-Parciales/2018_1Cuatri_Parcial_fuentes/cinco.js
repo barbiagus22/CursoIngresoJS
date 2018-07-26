@@ -1,23 +1,65 @@
 function mostrar()
 {
 	 //Nivel1 de parcial, practica.
-//1
 
- 	var ancho;
-	var largo;
-	var perimetro;
-
-	ancho=prompt("el ancho es");
-	largo=prompt("el largo es");
-
-	perimetro=(ancho*2)+(largo*2);
-
-	alert("El perimetro es: "+ perimetro);
+	var planeta;
 
 
-//2
+	planeta=prompt (" Ingrese un planeta");
 
-	//	alert("usted es xxxxx y vive en la localidad")
+
+// PRIMER CASO CON SWITCH
+
+	/*switch (planeta) {
+
+		case 'tierra':
+
+			alert ("acá vivimos");
+			break;
+
+		case 'mercurio':
+			alert ( "acá hace más calor ");
+			break;
+
+		case 'venus':
+			alert ("acá hace más frio");
+			break;
+
+		default:
+			alert ( " No es un planeta valido");
+
+
+	}*/
+
+ 
+ // SEGUNDO CASO CON IF
+
+ 	var tierra;
+	var mercurio;
+	var	venus;
+
+ 	if (planeta== 'tierra') {
+
+ 		alert ("acá vivimos");
+
+ 	}
+
+ 	else if (planeta== 'mercurio') {
+
+ 		alert ( "acá hace más calor ");
+
+ 	}
+
+ 	else if (planeta== 'venus') {
+
+ 		alert ("acá hace más frio");
+
+ 	}
+
+ 	else {
+
+ 		alert ( " No es un planeta valido");
+ 	}
 
 
 }
