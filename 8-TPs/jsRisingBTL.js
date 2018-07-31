@@ -32,100 +32,112 @@ function ComenzarIngreso ()
 		edad= parseInt (edad);
 		
 
-		while (edad<18 ||  edad>90 ) 
-		{
+		while ( isNaN(edad) || edad<18 ||  edad>90 ) 
+			{
+
 			edad= prompt (" La edad no se encuentra entre 18 y 90 años.  Ingrese edad");
 			edad= parseInt (edad);
-			contador=contador+1;
-			
-			// si pongo letra me sigue el sistema si bien muestra NaN que debo ingresar?
-		}
-
-		document.getElementById('Edad').value=edad;
+			}
+			document.getElementById('Edad').value=edad;
 		
 		sexo=prompt ("Ingrese sexo, F para femenino o M para masculino");
-		
-		while (sexo!= 'F' && sexo!='M' ) 
-		{
-			sexo= prompt (" No es correcto. Ingrese sexo, F para femenino o M para masculino");
-			contador=contador+1;
-			///femenino= 'f';masculino= 'm'; PREGUNTAR COMO HACER PARA QUE F ME LO MUESTRE COMO FEMENINO  LO MISMO MASCULINO											
-		}
 
-		document.getElementById('Sexo').value=sexo;
+		while (sexo!= 'F' && sexo!='M' ) 
+			{
+			sexo= prompt (" No es correcto. Ingrese sexo, F para femenino o M para masculino");
+			}
+			if (sexo=='F')	{
+
+				sexo= 'Femenino';
+			}
+			else	{
+
+				sexo= 'Masculino';
+			}
+			/*
+			switch (sexo) {
+
+			case "F":
+				sexo= "femenino";
+			break;
+			case "M":
+				sexo= "masculino";
+			break;
+			}
+			*/
+			document.getElementById('Sexo').value=sexo;
 
 		estadocivil= prompt ('Ingrese estado Civil 1- soltero 2- casado 3- divorciado 4-viudo');
 		
-		while (estadocivil<1 ||  estadocivil>=5 ) 
-		{
+		while (isNaN(edad) || estadocivil<1 ||  estadocivil>=5 ) 
+			{
 			estadocivil= prompt ("El numero ingresado no corresponde a las opciones. Ingrese estado Civil 1- soltero 2- casado 3- divorciado 4-viudo");
 			estadocivil= parseInt (estadocivil);
-			contador=contador+1;
-			// SI PONGO LETRAS IGUAL CONTINUA.
-		}
-
-		/* PREGUNTAR SI PUDIERA HACERLO CON
-
-		switch (estadocivil) {
+		
+			}
+			switch (estadocivil) {
 
 			case "1":
-
-				alert ( " Es soltero");
-				break;
-
+				estadocivil= "Soltero";
+			break;
 			case "2":
-
-				alert ( " Es casado");
-				break;
-
+				estadocivil= "Casado";
+			break;
 			case "3":
-
-				alert ( " Es divorciado");
-				break;
-
+				estadocivil= "Divorsiado";
+			break;			
 			case "4":
-
-				alert ( " Es viudo");
-				break;
-
-			defautl
-		}*/
+				estadocivil="Viudo";
+			break;
+			}
+					
 		document.getElementById('EstadoCivil').value=estadocivil;
 
 		sueldobruto= prompt( "Ingrese sueldo bruto mayor a $8000");
+		sueldobruto=parseInt (sueldobruto);
 
-		while (sueldobruto<8000)
-		{
-
-			sueldobruto= prompt( "No es mayor a $8000. Ingrese sueldo bruto ");
+			while (	isNaN(sueldobruto)	||	sueldobruto<8000)
+	
+			{
+			sueldobruto= prompt( "Ingrese sueldo bruto mayor a $8000");
 			sueldobruto=parseInt (sueldobruto);
-			contador=contador+1;
-		}
-		document.getElementById('Sueldo').value=sueldobruto;
+			}
+
+			document.getElementById('Sueldo').value=sueldobruto;
 
 
 		numerodelegajo=prompt ("Ingrese numero de legajo");
-		// preguntar como se cuentan la cantidad de cifras. 
-
-		while ( numerodelegajo == 0)
- 		{	
- 			//numerodelegajo= numerodelegajo/10;
- 			//alert ("El número tiene " + cifras + " cifras");
-   			numerodelegajo=prompt ("Ingrese numero de legajo");
+		numerodelegajo=parseInt (numerodelegajo);
+		
+			while (	isNaN(numerodelegajo)||	numerodelegajo<1000 ||	numerodelegajo>9999)
+ 			{	
+ 			numerodelegajo=prompt ("Ingrese numero de legajo");
    			numerodelegajo=parseInt (numerodelegajo);
-   			contador= contador+1;
- 		}
- 		document.getElementById('Legajo').value=numerodelegajo;
+   			}
+
+ 			document.getElementById('Legajo').value=numerodelegajo;
 		
  		nacionalidad= prompt("Ingrese nacionalidad  A- argentinos E- extranjeros N- nacionalizados");
 
- 		while (nacionalidad != 'A' && nacionalidad!= 'E' && nacionalidad!= 'N' ) 
- 		{
+ 			while (nacionalidad != 'A' && nacionalidad!= 'E' && nacionalidad!= 'N' ) 
+ 			{
  			nacionalidad= prompt("Ingrese nacionalidad  A- argentinos E- extranjeros N- nacionalizados");
- 			contador= contador+1;
- 		}
+ 			
+ 			}
+ 			switch (nacionalidad) {
 
- 		document.getElementById('Nacionalidad').value=nacionalidad;
+			case 'A':
+				nacionalidad= "Argentino";
+			break;
+			case 'E':
+				nacionalidad= "Extranjero";
+			break;
+			case 'N':
+				nacionalidad= "Nacionalizado";
+			break;			
+			}
+
+ 			document.getElementById('Nacionalidad').value=nacionalidad;
 
 
  		respuesta= prompt ( "Desea Continuar");
