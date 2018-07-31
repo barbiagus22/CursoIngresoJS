@@ -46,6 +46,15 @@ function ComenzarIngreso ()
 			{
 			sexo= prompt (" No es correcto. Ingrese sexo, F para femenino o M para masculino");
 			}
+			if (sexo=='F')	{
+
+				sexo= 'Femenino';
+			}
+			else	{
+
+				sexo= 'Masculino';
+			}
+			/*
 			switch (sexo) {
 
 			case "F":
@@ -54,7 +63,8 @@ function ComenzarIngreso ()
 			case "M":
 				sexo= "masculino";
 			break;
-			}////NO ME LO TOMA CON IF NO SE POR QUE
+			}
+			*/
 			document.getElementById('Sexo').value=sexo;
 
 		estadocivil= prompt ('Ingrese estado Civil 1- soltero 2- casado 3- divorciado 4-viudo');
