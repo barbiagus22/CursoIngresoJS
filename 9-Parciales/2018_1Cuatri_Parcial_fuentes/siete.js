@@ -84,7 +84,7 @@ los romedios se hacen fuera del while.
 
 		if (nota < notamasbaja) 
 		{
-		
+		notamasbaja=nota;
 		}
 		if (nota>notamasAlta) 
 		{
