@@ -54,52 +54,49 @@ function mostrar()
 	numero= parseInt (numero);
 
 	
-		while (isNaN (numero) || numero<-100 || numero>100)
+	while (isNaN (numero) || numero<-100 || numero>100)
+	{
+		numero= prompt ("reingrese numero");
+		numero= parseInt (numero);
+	}
+
+		if (numero%2==0) 
 		{
-			numero= prompt ("reingrese numero");
-			numero= parseInt (numero);
+			cantidadnumeroPares=cantidadnumeroPares+1;
+			acumuladorpares=acumuladorpares+numero;
+		}
+		else if (numero%2!=0) 
+		{
+			cantidadnumerosImpares=cantidadnumerosImpares+1;
+			acumuladorimpares=acumuladorimpares+numero;
+		}
+		if (numero==0){
+
+			cantidaddeceros=cantidaddeceros+1;
+			acumuladorceros=acumuladorceros+numero;
+		}
+			//no esty segura de esta union 
+		if (numero>0) 
+		{
+			acumuladorPositivos=acumuladorPositivos+numero;
+		}
+		else 
+		{
+			acumuladorNegativos=acumuladorNegativos+numero;
 		}
 
-			if (numero%2==0) {
-
-				cantidadnumeroPares=cantidadnumeroPares+1;
-				acumuladorpares=acumuladorpares+numero;
-			}
-			else if (numero%2!=0) {
-
-				cantidadnumerosImpares=cantidadnumerosImpares+1;
-				acumuladorimpares=acumuladorimpares+numero;
-			}
-			if (numero==0){
-
-				cantidaddeceros=cantidaddeceros+1;
-				acumuladorceros=acumuladorceros+numero;
-			}
-			//no esty segura de esta union 
-			if (numero>0) {
-
-				acumuladorPositivos=acumuladorPositivos+numero;
-			}
-			else {
-
-				acumuladorNegativos=acumuladorNegativos+numero;
-			}
-
-			if (contador==1  || numero> numeroMaximo) {
-
-				numeroMaximo=numero;
-				letraMaxima=letra;
-			}
-			if (contador==1  || numero< numeroMinimo ) {
-
-				numeroMinimo=numero;
-				letraMinima=letra;
-			}
-
-
-
+		if (contador==1  || numero> numeroMaximo) 
+		{
+			numeroMaximo=numero;
+			letraMaxima=letra;
+		}
+		if (contador==1  || numero< numeroMinimo )
+	    {
+			numeroMinimo=numero;
+			letraMinima=letra;
+		}
+		
 	respuesta= prompt ("Desea continuar");
-	
 	}	
 
 	promediosPositivos=acumuladorPositivos/contador;
