@@ -38,7 +38,7 @@ los romedios se hacen fuera del while.
 
 	// while (contador<2) 
 
-	for (contador=0 ; contador<3 ; contador++ ) 
+	for (contador=0 ; contador<5 ; contador++ ) 
 	{
 
 	nota=prompt ("Ingrese nota");
