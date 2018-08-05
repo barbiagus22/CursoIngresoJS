@@ -1,132 +1,103 @@
-/*
-	
-	NOMBRE		SEXO		EDAD
-	jose 		m 			25
-	maria 		f 			16
-	jesus		m 	   	 	33
-	fer 		f 			81
-*/
+/*Realizar el algoritmo que permita el ingreso por prompt de las notas
+ (validar entre 0 y 10) , el sexo (validar el sexo “f” o “m”) de 5 alumnos,
+  informar por alert: 
+a) El promedio de las notas totales. 
+b) La nota más baja y el sexo de esa persona. 
+c) La cantidad de varones que su nota haya sido mayor o igual a 6.*/
 
-// Siempre que tenemos cantidad , ejecutar contador. 
+
 
 function mostrar()
+
+/* va todo dentro del while , primero se piden los datos y los valido. 
+dsp evaluo las contidiones, 
+las alertas o document write informarlos al final fuera del while. 
+
+las notas alta y bajas se hacen por 2 if con condicion ||..... y se iguala notamasbaja=nota o viceversa. 
+los acumuladores de cantidad siempre +1
+en el caso de notas siempre con la variable por ej queres que accumule notas es acumulador + notas. si queres que cuente cantidad de varones es por contador +1.
+
+los romedios se hacen fuera del while. 
+
+*/
 {
 
-	var contador=0;
-	var nombre;
-	var sexo;
-	var edad;
-	var cantidaddeMujeres=0;
-	var cantidaddeHombres=0;
-	var cantidaddeMayores=0;
-	var cantidaddeMenores=0;
-	var edadMaxima=0;
-	var edadMinima=0;
-	var promedioedadMujeres;
-	var promedioedadHombre;
-	var promedioedadTotal;
-	var totalPersonas;
-	var edadTotal=0;
-	var masViejo;
+	var nota; 
+	var sexo; 
+	var contador;
+	var aculumadornotasTotales=0;
+	var promediodenotasTotales;
+	var notamasbaja;
+	var notamasAlta;
+	var sexodelanotaBaja;
+	var cantidaddeVarones=0;
+	var sexodelanotaAlta;
+
+
 	
 
+	// while (contador<2) 
 
-	while (contador<2) {
+	for (contador=0 ; contador<3 ; contador++ ) 
+	{
 
-		contador=contador+1;
-
-
-		nombre= prompt("Ingrese nombre");
-
-		sexo = prompt ("Ingrese sexo");
-
-		while (sexo!= 'F' && sexo!='M') {
-
-			sexo = prompt ("Ingrese sexo");
-		}
-
-		edad= prompt ("Ingrese edad");
-		edad=parseInt (edad);
-
-		while ( isNaN(edad) || edad<0 || edad>100) {
-
-			edad= prompt ("Ingrese edad");
-			edad=parseInt (edad);
-
-		}
-
-
-		if (sexo=='F') {
-
-			cantidaddeMujeres=cantidaddeMujeres+1;
-		}
-		else {
-
-			cantidaddeHombres=cantidaddeHombres+1;
-		}
-
-		if (edad>18) {
-
-			cantidaddeMayores=cantidaddeMayores+1;
-		}
-		else {
-
-			cantidaddeMenores=cantidaddeMenores+1;
-		}
-		if (contador==1) {
-
-			edadMinima=edad;
-			edadMaxima=edad;
-		}
-		else {
-
-			if (edad>edadMaxima) {
-
-				edadMaxima=edad;
-			}
-			if (edad<edadMinima) {
-
-				edadMinima=edad;
-			}
-		}
-		if (sexo=='F') {
-
-			promedioedadMujeres= edad / cantidaddeMujeres;
-		}
-		else {
-
-			promedioedadHombre=edad/cantidaddeHombres;
-		}
-
-		if (cantidaddeHombres>=0 && cantidaddeMujeres>=0) {
-
-			edadTotal=edadTotal+edad;
-			totalPersonas=cantidaddeMujeres+cantidaddeHombres;
-			promedioedadTotal=edadTotal/ totalPersonas;
-		}
+	nota=prompt ("Ingrese nota");
+	nota= parseInt (nota);
+	aculumadornotasTotales=aculumadornotasTotales+nota;
+	//contador=contador+1; si lo uso con while
 	
+		while (isNaN (nota)  || nota<0 || nota>10 )
+		{
+			nota=prompt ("Error reingrese nota");
+			nota= parseInt (nota);
+		}
 
-
+	sexo= prompt ("Ingrese sexo f o m");
+	
+		while (sexo!= 'f' && sexo!='m') 
+		{
+			sexo= prompt ("Error ! reingrese sexo  f o m");
+		}	
+	
+	if (contador==1 || nota<notamasbaja )
+	{
+		notamasbaja = nota;
+		sexodelanotaBaja = sexo;
+	}
+    if (contador==1 || nota>notamasAlta ) 
+	{
+		notamasAlta = nota;
+		sexodelanotaAlta = sexo;
 	}
 
+	if (nota>=6 && sexo=='m') 
+		{
+		cantidaddeVarones=cantidaddeVarones+1;
+		}
 
 
+	/*{
+		notamasbaja=nota;
+		notamasAlta=nota;
+	}
+	else 
 
-
-
-	document.write ( " Los nombres son: " + nombre + "<br>");
-	document.write ( " La cantidad de hombre es: " + cantidaddeHombres + "<br>");
-	document.write ( " La cantidad de mujeres es: " + cantidaddeMujeres + "<br>");
-	document.write ( " La cantidad de mayores es: " + cantidaddeMayores + "<br>");
-	document.write ( " La cantidad de menores es: " + cantidaddeMenores + "<br>");
-	document.write ( " La edad minima es: " + edadMinima + "<br>");
-	document.write ( " La edad maxima es: " + edadMaxima + "<br>");
-	document.write ( " La edad promedio mujeres es: " + promedioedadMujeres + "<br>");
-	document.write ( " La edad promedio hombre es: " + promedioedadHombre + "<br>");
-	document.write ( " La edad promedio total es: " + promedioedadTotal + "<br>");
-	document.write ( " El nombre del mas viejo es: " + masViejo + "<br>");
-
-
+		if (nota < notamasbaja) 
+		{
+		
+		}
+		if (nota>notamasAlta) 
+		{
+		nota=notamasAlta;
+		}
+	*/
+	
 }
 
-
+	promediodenotasTotales=aculumadornotasTotales/contador;
+	alert ("El promedio total de notas es " + promediodenotasTotales);
+	alert (" La nota mas baja es  " + notamasbaja + " y de sexo  " + sexodelanotaBaja );
+	alert (" La nota mas alta es  " + notamasAlta + " y de sexo  " + sexodelanotaAlta );
+	alert (" La cantidad de varones con nota mayor o igual a 6 son " + cantidaddeVarones );
+	
+}
