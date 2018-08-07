@@ -1,22 +1,23 @@
-
 function mostrar()
 {
-	var	base;
+
+	var base;
 	var altura;
 	var superficie;
 	var perimetro;
 
-	base=prompt("ingrese la base");
-	altura=prompt("ingrese la altura");
+	base= prompt ("Ingrese base del rectangulo");
+	base= parseInt (base);
 
-	superficie=(base*altura)/2;
-	perimetro=(base*3);
+	altura=prompt ("Ingrese altura del rectangulo");
+	altura= parseInt (altura);
 
-	alert("la superficie es: " +superficie + "el perimetro es: "+perimetro);
-	
+	superficie= (base*altura)/2;
+	perimetro=  base*3;
 
-
+	alert ("El perimetro es" + perimetro + " y la superficie es "+ superficie);
 
 
 
 }
+
