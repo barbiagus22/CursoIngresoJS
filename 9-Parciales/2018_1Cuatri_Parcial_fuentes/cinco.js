@@ -1,65 +1,45 @@
+/*Bienvenidos. 
+(SWITCH)pedir el ingreso de un planeta del sistema solar 
+Si es la tierra mostrar "acá vivimos". 
+Si está más cerca del sol, "acá hace más calor". 
+Si está más lejos del sol, "acá hace más frio". 
+Si no es un planeta valido informarlo. 
+
+Aclaración: los planetas se ingresan en minúscula
+ (Mercurio y Venus están antes que la tierra).*/
+
+
 function mostrar()
-{
-	 //Nivel1 de parcial, practica.
+{	
 
-	var planeta;
+	var planeta; 
 
+	planeta = prompt ( "ingrese un planeta");
 
-	planeta=prompt (" Ingrese un planeta");
-
-
-// PRIMER CASO CON SWITCH
-
-	/*switch (planeta) {
+	switch (planeta)
+	{
 
 		case 'tierra':
+			alert("acá vivimos");
+		break; 
 
-			alert ("acá vivimos");
-			break;
-
-		case 'mercurio':
-			alert ( "acá hace más calor ");
-			break;
+		case "mercurio":
+			alert("hace más calor" );
+		break; 
 
 		case 'venus':
-			alert ("acá hace más frio");
-			break;
-
+			alert ( " acá hace más frio ");
+		break;
 		default:
-			alert ( " No es un planeta valido");
+			alert ( " no es un planeta valido ");
 
 
-	}*/
-
- 
- // SEGUNDO CASO CON IF
-
- 	var tierra;
-	var mercurio;
-	var	venus;
-
- 	if (planeta== 'tierra') {
-
- 		alert ("acá vivimos");
-
- 	}
-
- 	else if (planeta== 'mercurio') {
-
- 		alert ( "acá hace más calor ");
-
- 	}
-
- 	else if (planeta== 'venus') {
-
- 		alert ("acá hace más frio");
-
- 	}
-
- 	else {
-
- 		alert ( " No es un planeta valido");
- 	}
 
 
+
+
+
+
+
+	}
 }
